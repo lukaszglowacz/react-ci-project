@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# SnapJoy - Comprehensive Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to SnapJoy! SnapJoy is an engaging photo-sharing application built with React and connected to the DRF_API server. This documentation provides comprehensive information to help you understand, set up, and contribute to the SnapJoy project.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+SnapJoy is a vibrant photo-sharing application where users can create accounts, upload photos, and engage with the community through likes and comments. The project is based on the Moments project from the CODE Institute, customized and seamlessly connected to the DRF_API server.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Follow these steps to set up and run the SnapJoy React application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+Ensure you have Node.js installed on your machine. You can download it [here](https://nodejs.org/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone the SnapJoy repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/lukaszglowacz/react-ci-project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    cd snapjoy-react
 
-### `npm run eject`
+3. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Configuration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Update the API base URL in the src/api/axiosDefaults.js file to point to your DRF_API server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    // src/api/axiosDefaults.js
 
-## Learn More
+    import axios from "axios";
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    axios.defaults.baseURL = "https://your-drf-api-url.com";
+    axios.defaults.headers.post["Content-Type"] = "application/json";
+    axios.defaults.withCredentials = true;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    export const axiosReq = axios.create();
+    export const axiosRes = axios.create();
 
-### Code Splitting
+5. Running the aplication:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```bash
+    npm start
 
-### Analyzing the Bundle Size
+    Visit http://localhost:3000 in your browser to explore SnapJoy.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Features
 
-### Making a Progressive Web App
+- User Authentication: Create an account and log in to start sharing your moments.
+- Photo Upload: Share your favorite photos with the SnapJoy community.
+- Interactivity: Allow the community to engage by liking and commenting on your photos.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Connectivity with DRF_API
 
-### Advanced Configuration
+    SnapJoy is seamlessly connected to the DRF_API server. Ensure that the DRF_API server is running and properly configured according to the instructions in its README.md file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Credentials
+    The project is built based on the Moments application template created by Code Institute.
 
-### Deployment
+### Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Contributions to SnapJoy are welcome! Feel free to submit issues or pull requests to enhance the application's functionality and usability.
